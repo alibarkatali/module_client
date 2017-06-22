@@ -68,7 +68,11 @@ body {
    background-color: grey;
 }
 
-.weather {
+.alignLeft {
   font-size:small;
   text-align:left;
+}
+
+.form-control {
+    width: 120px;
 }
