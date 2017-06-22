@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Bootstrap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS.css">
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="header">
+<h1>JEU LIMONADE FACE/OFF</h1>
+<h3>Gestion du stand de <span id="pseudo">joueur</span><h3>
+</h3>
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- colonne de gauche du jeu -->
+    <div class="col-sm-4" style="background-color:orangered;">
+      <div class="header">
+      <p>Emplacement des stands et panneaux publicitaires</p>
+      </div>
+      <div id="gameMap"></div>
+      <button id="addPub" type="button" class="btn btn-primary">Ajouter un PB</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="removePub" type="button" class="btn btn-default">Retirer un PB</button>
+    </div>
+
+    <!-- colonne du milieu du jeu -->
+    <div class="col-sm-4" style="background-color:orange;">
+    <div class="header">
+      <p>Information du jour <span id="day">#jour</span><p>      
+    </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="input-group date" id="datetime">
+            <input type="text" class="form-control" />
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+        </div>        
+        <div class="col-md-6">
+          <div class="align-left">
+          <p>Le temps est <span id="weatherToday">météo</span> pour aujourd'hui. Demain, le temps sera <span id="weatherTomo">météo</span><p>
+          </div>
+        </div>
+      </div>
+      <div class="align-left">
+        <p>Action du lendemain<p> 
+        <p>Votre argent disponible :<p><input type="number" id="budget"><p>€<p>  
+      </div>
+    </div>
+    <div class="col-sm-4" style="background-color:orangered;">.col-sm-4</div>
+  </div>
+</div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- gestion de la date -->
+<script src="js/bootstrap.min.js">
+
+</script>
+
+<!-- gestion de la map -->
+<script>
+  function initMap() {
+    var uluru = {lat: 42.6990297, lng: 2.8344617};
+    var map = new google.maps.Map(document.getElementById('gameMap'), {
+      zoom: 12,
+      center: uluru
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
+  }
+</script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn9jfx7Ijv7k14NzHfGP4tBARM9JJJ3og&callback=initMap">
+</script>
+
+</html>
