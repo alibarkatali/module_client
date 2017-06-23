@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Carte</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS.css">
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>JEU LIMONADE FACE/OFF</h1>
+      <h3>Emplacements des stands et panneaux publicitaire</h3>
+    </div>
+    <canvas id="myCanvas" width="1100" height="700" onclick="gereclick(event)"></canvas>
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+
+  var c = document.getElementById('myCanvas');
+  var ctx = c.getContext('2d');
+  var img = document.getElementById("scream");
+  function gereclick(event) { 
+    var XYrect = c.getBoundingClientRect();
+    var Xcurseur = Math.round(event.clientX - XYrect.left); 
+    var Ycurseur = Math.round(event.clientY - XYrect.top);
+    ctx.fillStyle=  'rgb('+255+','+255+','+255+')' ; // = rgb ( R,V,B) (choix aléaloire)
+    ctx.beginPath();
+    ctx.arc(Xcurseur, Ycurseur, 20 , 0, Math.PI*2);// =rayon aléaloire
+    ctx.fill();
+  }; 
+   
+</script></
+
+</body>
+</html>

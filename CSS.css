@@ -95,3 +95,8 @@ tbody{
 #alignCenter {
   text-align:center;
 }
+
+/*CSS client_carte*/
+#myCanvas{
+  background-image: url(image/Corse.JPG);
+}
