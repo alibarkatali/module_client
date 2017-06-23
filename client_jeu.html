@@ -19,7 +19,7 @@
     <!-- colonne de gauche du jeu -->
     <div class="col-sm-4" style="background-color:orangered;">
       <div class="header">
-      <p>Emplacement des stands et panneaux publicitaires</p>
+        <p>Emplacement des stands et panneaux publicitaires</p>
       </div>
       <div id="gameMap"></div>
       <button id="addPub" type="button" class="btn btn-primary">Ajouter un PB</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="removePub" type="button" class="btn btn-default">Retirer un PB</button>
@@ -28,29 +28,78 @@
     <!-- colonne du milieu du jeu -->
     <div class="col-sm-4" style="background-color:orange;">
     <div class="header">
-      <p>Information du jour <span id="day">#jour</span><p>      
+      <p>Information du jour <span id="day">#jour</span></p>      
     </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="input-group date" id="datetime">
-            <input type="text" class="form-control" />
-            <span class="input-group-addon">
-                <span class="glyphicon glyphicon-calendar"></span>
-            </span>
-          </div>
-        </div>        
-        <div class="col-md-6">
-          <div class="align-left">
-          <p>Le temps est <span id="weatherToday">météo</span> pour aujourd'hui. Demain, le temps sera <span id="weatherTomo">météo</span><p>
-          </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="input-group date" id="datetime">
+          <input type="text" class="form-control" />
+          <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>    
+      <div class="col-md-6">
+        <div class="alignLeft">
+        <p>Le temps est <span id="weatherToday">"météo"</span> pour aujourd'hui. Demain, le temps sera <span id="weatherTomo">"météo"</span></p>
         </div>
       </div>
-      <div class="align-left">
-        <p>Action du lendemain<p> 
-        <p>Votre argent disponible :<p><input type="number" id="budget"><p>€<p>  
-      </div>
     </div>
-    <div class="col-sm-4" style="background-color:orangered;">.col-sm-4</div>
+      <p>Action du lendemain</p> 
+      <div class="alignLeft">
+        <p>Votre argent disponible : <span id="budget">"budget"</span>€</p>  
+        <p id="alignCenter">Préparation de vos boissons</p>  
+        <div class="row">
+          <div class="col-md-4"> 
+            <button type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown">Boisson <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">...</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4"> 
+            <input type="number" class="form-control" id="quantity" placeholder="Quantité">
+          </div>
+          <div class="col-md-4"> 
+            <button id="adddrink" type="button" class="btn btn-success form-control">Valider</button>
+          </div>
+        </div>
+        <table class="table table-striped">
+        <thead><tr><th>Boisson</th><th>Coût U</th><th>Prix V</th><th>QTT</th><th>Coût T</th><th>Prix VT</th><th>Eff ligne</th></tr></thead>
+        <tbody>
+          <tr><td>..</td><td>..</td><td>..</td><td>..</td><td>..</td><td>..</td><td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+          <tr><td>..</td><td>..</td><td>..</td><td>..</td><td>..</td><td>..</td><td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+          <tr><td>..</td><td>..</td><td>..</td><td>..</td><td>..</td><td>..</td><td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+          <tr><td>..</td><td>..</td><td>..</td><td>..</td><td>..</td><td>..</td><td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+          <tr><td>..</td><td>..</td><td>..</td><td>..</td><td>..</td><td>..</td><td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+        </tbody>
+        </table>
+        <div class="alignLeft">
+          <p></br></br></br></br></br></br>Somme totale du stand : <span id="sumStand">"total"</span>€</p>
+        </div>
+        <p class="header">Liste des ingrédients</p>
+        <div class="btn-group btn-group-justified">
+          <a href="#" class="btn btn-default">Mojito</a>
+          <a href="#" class="btn btn-default">Bière</a>
+          <a href="#" class="btn btn-default">Café</a>
+        </div></br>
+        <div class="well well-sm">...</div>
+        <button id="valAction" type="button" class="btn btn-lg btn-success center-block">Valider l'action</button>
+      </div>
+    </div>  
+
+    <!-- colonne de gauche du jeu -->
+    <div class="col-sm-4" style="background-color:orangered;">
+      <div class="header">
+        <p>Information sur les joueurs du jour <span id="day">#jour</span></p>
+      </div>
+      <div class="well well-sm">Joueur 1 (argent disponible : XX€)
+     Stand                               12 dispo
+          Mojito 2€                         *6
+          Bière 1€                           *6
+      </div>
+      <button id="reinitial" type="button" class="btn btn-xs btn-danger pull-right">Réinitialisation du jeu</button>
+    </div>
   </div>
 </div>
 </body>
