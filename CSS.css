@@ -76,3 +76,22 @@ body {
 .form-control {
     width: 120px;
 }
+
+tr {
+  width: 100%;
+  display: inline-table;
+  font-size:smaller;
+}
+
+tbody{
+  overflow-y: scroll;
+  height: 125px;
+  width: 95%;
+  position: absolute;
+  text-align: center;
+  display: inline;
+}
+
+#alignCenter {
+  text-align:center;
+}
