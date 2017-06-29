@@ -10,10 +10,6 @@ body {
   font-size:100px;
 }
 
-.meteotxt {
-background-image: url("image/sunny.png");
-}
-
 .hero-widget { 
   text-align: center; 
   padding-top: 10px; 

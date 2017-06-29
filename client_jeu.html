@@ -161,45 +161,45 @@ function getMetrology () {
           if(value['dfn'] == 0) 
             switch (meteo) {
               case "Rainy":
-                $('#weatherToday').css('background-image', 'url("image/rain_light.png")');
+                $('#weatherToday').html('<img src="image/rain_light.png"/>');
               break;
 
               case "Cloudy":
-                $('#weatherToday').css('background-image', 'url("image/cloudy.png")');
-                break;
+                $('#weatherToday').html('<img src="image/cloudy.png"/>');
+              break;
 
               case "Heatwave":
-                $('#weatherToday').css('background-image', 'url("image/sunny.png")');              
-                break;
+                $('#weatherToday').html('<img src="image/sunny.png"/>');
+              break;
 
               case "Sunny":
-                $('#weatherToday').css('background-image', 'url("image/partly_cloudy.png")');              
-                break;
+                $('#weatherToday').html('<img src="image/partly_cloudy.png"/>');
+              break;
 
               case "Thunderstorm":
-                $('#weatherToday').css('background-image', 'url("image/rain.png")');              
-                break;
+                $('#weatherToday').html('<img src="image/rain.png"/>');
+              break;
 
           else 
             switch (meteo) {
               case "Rainy":
-                $('#weatherTomorrow').css('background-image', 'url("image/rain_light.png")');
+                $('#weatherTomorrow').html('<img src="image/rain_light.png"/>');
               break;
 
               case "Cloudy":
-                $('#weatherTomorrow').css('background-image', 'url("image/cloudy.png")');
+                $('#weatherTomorrow').html('<img src="image/cloudy.png"/>');
               break;
 
               case "Heatwave":
-                $('#weatherTomorrow').css('background-image', 'url("image/sunny.png")');
+                $('#weatherTomorrow').html('<img src="image/sunny.png"/>');
               break;
 
               case "Sunny":
-                $('#weatherTomorrow').css('background-image', 'url("image/partly_cloudy.png")');
+                $('#weatherTomorrow').html('<img src="image/partly_cloudy.png"/>');
               break;
 
               case "Thunderstorm":
-                $('#weatherTomorrow').css('background-image', 'url("image/rain.png")');
+                $('#weatherTomorrow').html('<img src="image/rain.png"/>');
               break;
         });
         }
