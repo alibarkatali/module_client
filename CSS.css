@@ -2,6 +2,8 @@ body {
   margin:0px;
   font-family: 'Helvetica';
 	background-size: 1000px 600px;
+  background-color: grey;
+  opacity: 0.85;
 }
 
 #titleHeader {

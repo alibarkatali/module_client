@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="fr">
 <head>
   <title>Jeu</title>
@@ -9,28 +9,11 @@
   <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
 </head>
 
-<body>
 <h1 id="titleHeader">JEU LIMONADE FACE/OFF</h1>
-<!-- rejoindre la partie -->
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="row margintobloc">
-      <div class="col-md-6 col-md-offset-3">
-        <h3 class="center">Rejoindre la partie en cours</h3>
-        <div class="center">
-          <form id="formGameJoin" method="POST">
-          <input type="text" name="name" id="name" placeholder="Votre pseudo">
-          <button id="addPlayer" type="button" class="btn btn-success form-control">Valider</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <!-- information sur la partie en cours -->
 <div class="container-fluid bloccontent">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-2">
       <div class="hero-widget well well-sm">
         <div class="text infobloc weatherToday">
           <em class="smallTitle">météo du jour</em>
@@ -38,7 +21,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-2">
       <div class="hero-widget well well-sm">
         <div class="text infobloc weatherTomorrow">
           <em class="smallTitle">météo de demain</em>
@@ -46,7 +29,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-2">
       <div class="hero-widget well well-sm">
         <div class="text infobloc timer">
           <em class="smallTitle">temps</em>
@@ -54,7 +37,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-2">
       <div class="hero-widget well well-sm">
         <div class="text infobloc budgetplayer">
           <em class="smallTitle">Budget</em>
@@ -62,39 +45,51 @@
         </div>
       </div>
     </div>
+    <div class="col-sm-2">
+      <div class="hero-widget well well-sm">
+        <div class="text infobloc profit">
+          <em class="smallTitle">Profit</em>
+          <span id="profit" class="profittxt"></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="hero-widget well well-sm">
+        <div class="text infobloc sales">
+          <em class="smallTitle">Budget</em>
+          <span id="sales" class="salestxt"></span>
+        </div>
+      </div>
+    </div>
   </div>
+  <!-- rejoindre la partie -->
+  <div id="inscriptionbloc" class="row">
+    <div class="col-md-6 col-md-offset-3 center">
+      <h2 class="">Rejoindre la partie en cours</h2>
+        <div class="center">
+          <form id="formGameJoin" class="center" method="POST">
+          <input type="text" name="name" id="name" placeholder="Votre pseudo">
+          <input type="submit" name="gamestart" value="Demarrer la partie">
+        </form>
+        </div>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-sm-6">
       <div class="hero-widget well well-sm">
-        <h3 id="titleHeader smalltitle">Information sur le jeu en cours</h3>
-        <!-- mini-menu -->
-        <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Carte</a></li>
-          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Liste de joueurs</a></li>
-        </ul>
+        
+        <h1 class="grandtitre">Joueurs en ligne</h1>
+        <div class="row">
+          <div id="playerList" class="col-md-12">   
+          </div>
+        </div>
+
         <div class="tab-content">
-        <!-- gestion carte --> 
-          <div role="tabpanel" class="tab-pane active" id="home">
-            <div class="header">
-              <p class="title1">Stands & Panneaux Pub</p>
-            </div>
-            <div id="gameMap"></div>            
-          </div>
           <div role="tabpanel" class="tab-pane" id="profile">           
-        <!-- gestion liste joueurs en ligne-->
-          <div class="col-md-12">
-            <div class="header">
-              <p class="title1">Joueurs en ligne<span id="day">#jour</span></p>
-            </div>
-            <div >
-              <ul id="playerList" class="list-group"> 
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
       </div>
-        <button id="reinitial" type="button" class="btn btn-xs btn-danger pull-left">Réinitialisation du jeu</button>
     </div>
     <div class="col-sm-6">
       <div class="hero-widget well well-sm">
@@ -102,42 +97,41 @@
         <h3 class="center">Action pour le lendemain</h3> 
           <p class="alignLeft">Préparation de vos boissons :</p>  
           <div class="row">
-            <form id="formproduction">
-              <div class="col-md-2">
-                <select id="recettadd" class="selectpicker"></select>
-              </div>
-              <div class="col-md-2">
-                <span id="prixunitaire"></span>
-              </div>
-              <div class="col-md-2">
-                <input id="quantity" type="number" class="form-control" placeholder="Quantité">
-              </div>
-              <div class="col-md-2">
-                <input id="prixvente" type="number" class="form-control" placeholder="Prix Vente">
-              </div>
-              <div class="col-md-2">
-                <input type="submit" id="btnaddrecette" value="Valider">
-              </div>
-            </form>
-          </div>
+          <form id="formproduction">
+            <div class="col-md-3">
+                  <select id="recettadd" class=""></select>
+                </div>
+                <div class="col-md-3">
+                  <input id="quantity" type="number" class="" placeholder="Quantité">
+                </div>
+                <div class="col-md-3">
+                  <input id="prixvente" type="number" class="" placeholder="Prix Vente">
+                </div>
+                <div class="col-md-3">
+                  <input type="submit" id="btnaddrecette" value="Ajouter la recette">
+                </div>
+              </form>
+            </div>
           <div class="bloccenter margintobloc">
-          <table id="playerpipe" class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Boisson</th>
-                <th>Coût U</th>
-                <th>Prix V</th>
-                <th>QTT</th>
-                <th>Coût T</th>
-                <th>Prix VT</th>
-                <th>Eff ligne</th>
-              </tr>
-            </thead>
-          </table>
+          <div class="row">
+            <div class="col-md-3">
+              Recette
+            </div>
+            <div class="col-md-3">
+              Quantité
+            </div>
+            <div class="col-md-3">
+              Prix Vente
+            </div>
+            <div class="col-md-3">
+              Total Vente
+            </div>
+          </div>
            </div>
-           <p class="margintobloc">Somme totale du stand : <span id="sumStand">"total"</span>€</p>
-          <button id="valAction" type="button" class="btn btn-lg btn-success center-block">Valider l'action</button>
+          <button id="valideracions" type="button" class="btn btn-lg btn-success center-block">Valider l'action</button>
       </div>
+      <button class="btn btn-xs btn-danger pull-left" id="btnexitgame" href="#">Quitter la partie</button>
+      <button id="reinitial" type="button" class="btn btn-xs btn-danger pull-right">Réinitialisation du jeu</button>
       </div>
     </div>
   </div>
@@ -179,8 +173,7 @@ function getMetrology () {
               case "Thunderstorm":
                 $('#weatherToday').html('<img src="image/rain.png"/>');
               break;
-
-          else 
+          }if else{
             switch (meteo) {
               case "Rainy":
                 $('#weatherTomorrow').html('<img src="image/rain_light.png"/>');
